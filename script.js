@@ -18,12 +18,11 @@ onload = function() {
     }
 };
 function updateLoader() {
-    with(ctx) {
-        clearRect(0, 0, 16, 16);
-        beginPath();
-        arc(8, 8, 6, s, (pct * 2 * Math.PI / 100 + s));
-        stroke();
-    }
+    ctx.clearRect(0, 0, 16, 16);
+    ctx.beginPath();
+    ctx.arc(8, 8, 6, s, (pct * 2 * Math.PI / 100 + s));
+    ctx.stroke();
+
     lnk.href= cv.toDataURL('image/png'); // update favicon
     if (pct === 100) {
         clearInterval(tc);
