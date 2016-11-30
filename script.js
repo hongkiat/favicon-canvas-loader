@@ -2,7 +2,7 @@ onload = function() {
     cv = document.querySelector('#cvl'),
     ctx = cv.getContext('2d');
     if (!!ctx) {
-        C3qπ = 1.5 * Math.PI, // starting position[angle] for circle drawing
+        s = 1.5 * Math.PI, // starting position[angle] for circle drawing
         tc = pct = 0,
         btn = document.querySelector('#lbtn'),
         lnk = document.querySelector('link[rel*="icon"]');
@@ -21,7 +21,7 @@ function updateLoader() {
     with(ctx) {
         clearRect(0, 0, 16, 16);
         beginPath();
-        arc(8, 8, 6, C3qπ, (pct * 2 * Math.PI / 100 + C3qπ));
+        arc(8, 8, 6, s, (pct * 2 * Math.PI / 100 + s));
         stroke();
     }
     lnk.href= cv.toDataURL('image/png'); // update favicon
